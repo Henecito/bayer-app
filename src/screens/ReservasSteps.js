@@ -646,8 +646,8 @@ export const renderStep7 = (
   agricultorNombre,
   agricultorTelefono,
   agricultorUbicacion,
-  agricultorEmail, 
-  formatDate,
+  agricultorEmail,
+  formatDateCorrectly, // 👈 uso consistente
   styles
 ) => {
   return (
@@ -664,10 +664,85 @@ export const renderStep7 = (
       </Text>
 
       <View style={styles.confirmationBox}>
-        {/* ... otras secciones ... */}
+        {/* Período de reserva */}
+        <View style={styles.confirmationSection}>
+          <Text style={styles.confirmationSectionTitle}>
+            Período de reserva
+          </Text>
+          <View style={styles.confirmRow}>
+            <Ionicons name="calendar-outline" size={20} color={PRIMARY_COLOR} />
+            <Text style={styles.confirmText}>
+              Inicio: {formatDateCorrectly(fechaInicio)}
+            </Text>
+          </View>
+          <View style={styles.confirmRow}>
+            <Ionicons name="calendar-outline" size={20} color={PRIMARY_COLOR} />
+            <Text style={styles.confirmText}>
+              Fin: {formatDateCorrectly(fechaFin)}
+            </Text>
+          </View>
+          <View style={styles.confirmRow}>
+            <Ionicons name="time-outline" size={20} color={PRIMARY_COLOR} />
+            <Text style={styles.confirmText}>
+              Duración: {duracionReserva}{" "}
+              {duracionReserva === 1 ? "día" : "días"}
+            </Text>
+          </View>
+        </View>
 
         <View style={styles.confirmationDivider} />
 
+        {/* Cantidad de litros */}
+        <View style={styles.confirmationSection}>
+          <Text style={styles.confirmationSectionTitle}>
+            Cantidad de Kg
+          </Text>
+          <View style={styles.confirmRow}>
+            <Ionicons name="water-outline" size={20} color={PRIMARY_COLOR} />
+            <Text style={styles.confirmText}>
+              Compraste: {cantidadLitros} Kg
+            </Text>
+          </View>
+        </View>
+
+        <View style={styles.confirmationDivider} />
+
+        {/* Maquinaria */}
+        <View style={styles.confirmationSection}>
+          <Text style={styles.confirmationSectionTitle}>Maquinaria</Text>
+          <View style={styles.confirmRow}>
+            <Ionicons
+              name="construct-outline"
+              size={20}
+              color={PRIMARY_COLOR}
+            />
+            <Text style={styles.confirmText}>
+              Modelo:{" "}
+              {MODELOS_MAQUINAS.find((m) => m.id === modeloSeleccionado)
+                ?.nombre || "-"}
+            </Text>
+          </View>
+          <View style={styles.confirmRow}>
+            <Ionicons
+              name="hardware-chip-outline"
+              size={20}
+              color={PRIMARY_COLOR}
+            />
+            <Text style={styles.confirmText}>Código: {codigoSeleccionado}</Text>
+          </View>
+          {maquinaDetalles && (
+            <View style={styles.confirmRow}>
+              <Ionicons name="build-outline" size={20} color={PRIMARY_COLOR} />
+              <Text style={styles.confirmText}>
+                Estado: {maquinaDetalles.estado}
+              </Text>
+            </View>
+          )}
+        </View>
+
+        <View style={styles.confirmationDivider} />
+
+        {/* Datos de contacto */}
         <View style={styles.confirmationSection}>
           <Text style={styles.confirmationSectionTitle}>Datos de contacto</Text>
           <View style={styles.confirmRow}>
@@ -684,9 +759,7 @@ export const renderStep7 = (
           </View>
           <View style={styles.confirmRow}>
             <Ionicons name="mail-outline" size={20} color={PRIMARY_COLOR} />
-            <Text style={styles.confirmText}>
-              Email: {agricultorEmail} {/* <-- agregado */}
-            </Text>
+            <Text style={styles.confirmText}>Email: {agricultorEmail}</Text>
           </View>
           <View style={styles.confirmRow}>
             <Ionicons name="location-outline" size={20} color={PRIMARY_COLOR} />
@@ -696,6 +769,7 @@ export const renderStep7 = (
           </View>
         </View>
 
+        {/* Política */}
         <View style={styles.policySection}>
           <Ionicons
             name="information-circle-outline"
