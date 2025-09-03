@@ -1,0 +1,383 @@
+import { StyleSheet, Dimensions } from 'react-native';
+
+const screenWidth = Dimensions.get('window').width;
+
+const PRIMARY_COLOR = '#07bbfd';
+const SECONDARY_COLOR = '#045d99';
+
+export const reservaStyles = StyleSheet.create({
+  gradientBackground: { flex: 1 },
+  scrollContainer: {
+    padding: 12,
+    paddingBottom: 24,
+    justifyContent: 'center',
+  },
+  header: {
+    marginBottom: 16,
+    alignItems: 'center',
+  },
+  headerTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+    textAlign: 'center',
+  },
+  headerSubtitle: {
+    fontSize: 14,
+    color: '#fff',
+    opacity: 0.9,
+    textAlign: 'center',
+  },
+  card: {
+    backgroundColor: '#fff',
+    borderRadius: 16,
+    padding: 20,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 6,
+    minHeight: 400,
+    maxWidth: screenWidth * 0.95,
+    alignSelf: 'center',
+  },
+  progressContainer: {
+    marginBottom: 5,
+  },
+  progressBarContainer: {
+    height: 5,
+    backgroundColor: '#e0e0e0',
+    borderRadius: 3,
+    overflow: 'hidden',
+  },
+  progressBar: {
+    height: '100%',
+    backgroundColor: PRIMARY_COLOR,
+    borderRadius: 3,
+  },
+  progressText: {
+    marginTop: 4,
+    fontSize: 11,
+    color: SECONDARY_COLOR,
+    textAlign: 'center',
+  },
+  stepIcon: {
+    alignSelf: 'center',
+    marginBottom: 6,
+  },
+  stepTitle: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: PRIMARY_COLOR,
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+  stepDescription: {
+    fontSize: 13,
+    textAlign: 'center',
+    color: '#666',
+    marginBottom: 16,
+  },
+  buttonsRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
+    alignItems: 'center',
+  },
+  buttonNext: {
+    backgroundColor: PRIMARY_COLOR,
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    minWidth: 120,
+  },
+  buttonText: {
+    color: '#fff',
+    fontWeight: '700',
+    fontSize: 13,
+  },
+  buttonIcon: {
+    marginLeft: 5,
+  },
+  buttonBack: {
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: PRIMARY_COLOR,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonBackText: {
+    color: PRIMARY_COLOR,
+    fontWeight: '600',
+    fontSize: 13,
+    marginLeft: 2,
+  },
+  buttonDisabled: {
+    backgroundColor: '#b0b0b0',
+  },
+  calendar: {
+    borderRadius: 10,
+    marginBottom: 4,
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+  },
+  dateConfirmation: {
+    backgroundColor: '#e6f4ff',
+    padding: 10,
+    borderRadius: 10,
+    alignItems: 'center',
+    marginTop: 6,
+  },
+  dateConfirmationText: {
+    color: SECONDARY_COLOR,
+    fontWeight: '600',
+    fontSize: 14,
+  },
+  dateReminderContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#f5f5f5',
+    padding: 10,
+    borderRadius: 10,
+    marginBottom: 10,
+  },
+  dateReminderText: {
+    color: SECONDARY_COLOR,
+    fontWeight: '500',
+    fontSize: 13,
+    marginLeft: 8,
+  },
+  machineCard: {
+    backgroundColor: '#f8f8f8',
+    borderRadius: 10,
+    marginBottom: 10,
+    borderWidth: 2,
+    borderColor: '#e0e0e0',
+    overflow: 'hidden',
+  },
+  machineCardSelected: {
+    backgroundColor: PRIMARY_COLOR,
+    borderColor: SECONDARY_COLOR,
+  },
+  machineCardContent: {
+    padding: 14,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  machineCardTextContainer: {
+    flex: 1,
+    marginLeft: 10,
+  },
+  machineCardTitle: {
+    fontSize: 16,
+    color: '#222',
+    fontWeight: '600',
+  },
+  machineCardDescription: {
+    fontSize: 13,
+    color: '#444',
+    marginTop: 2,
+  },
+  machineCardCapacity: {
+    fontSize: 11,
+    color: SECONDARY_COLOR,
+    marginTop: 2,
+    fontWeight: '500',
+  },
+  machineCardTextSelected: {
+    color: '#fff',
+  },
+  codeCard: {
+    backgroundColor: '#f8f8f8',
+    borderRadius: 10,
+    marginBottom: 10,
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+    overflow: 'hidden',
+  },
+  codeCardSelected: {
+    backgroundColor: PRIMARY_COLOR,
+    borderColor: SECONDARY_COLOR,
+  },
+  codeCardContent: {
+    padding: 14,
+  },
+  codeCardMainInfo: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  codeCardTitle: {
+    fontSize: 16,
+    color: '#222',
+    fontWeight: '600',
+  },
+  codeCardInfo: {
+    fontSize: 13,
+    color: '#444',
+    marginTop: 6,
+  },
+  codeCardTextSelected: {
+    color: '#fff',
+  },
+  statusBadge: {
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    borderRadius: 6,
+  },
+  statusText: {
+    fontSize: 11,
+    fontWeight: '600',
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+    borderRadius: 10,
+    padding: 12,
+    marginBottom: 12,
+    fontSize: 15,
+    color: '#222',
+    backgroundColor: '#f9f9f9',
+  },
+  reservationSummary: {
+    backgroundColor: '#f5f5f5',
+    padding: 10,
+    borderRadius: 10,
+    marginBottom: 12,
+  },
+  summaryRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 6,
+  },
+  summaryText: {
+    color: '#333',
+    marginLeft: 6,
+    fontSize: 13,
+  },
+  confirmationBox: {
+    backgroundColor: '#f9f9f9',
+    borderRadius: 10,
+    padding: 16,
+    marginTop: 6,
+  },
+  confirmationSection: {
+    marginBottom: 14,
+  },
+  confirmationSectionTitle: {
+    fontSize: 15,
+    fontWeight: '700',
+    color: PRIMARY_COLOR,
+    marginBottom: 8,
+  },
+  confirmRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 6,
+  },
+  confirmText: {
+    fontSize: 15,
+    color: '#333',
+    marginLeft: 10,
+  },
+  confirmationDivider: {
+    height: 1,
+    backgroundColor: '#e0e0e0',
+    marginVertical: 12,
+  },
+  policySection: {
+    flexDirection: 'row',
+    backgroundColor: '#e6f7ff',
+    padding: 12,
+    borderRadius: 10,
+    marginTop: 14,
+  },
+  policyText: {
+    flex: 1,
+    fontSize: 12,
+    color: SECONDARY_COLOR,
+    marginLeft: 8,
+  },
+ubicacionContainer: {
+  width: '100%',
+  marginBottom: 15,
+},
+ubicacionButtons: {
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  marginTop: 10,
+  gap: 10,
+},
+ubicacionButton: {
+  flex: 1,
+  backgroundColor: PRIMARY_COLOR,
+  paddingVertical: 12,
+  paddingHorizontal: 15,
+  borderRadius: 8,
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: 8,
+},
+ubicacionButtonSecondary: {
+  backgroundColor: '#fff',
+  borderWidth: 1,
+  borderColor: PRIMARY_COLOR,
+},
+ubicacionButtonText: {
+  color: '#fff',
+  fontWeight: '600',
+  fontSize: 14,
+},
+mapContainer: {
+  width: '100%',
+  height: 300,
+  marginTop: 15,
+  borderRadius: 10,
+  overflow: 'hidden',
+  borderWidth: 1,
+  borderColor: '#e0e0e0',
+},
+map: {
+  flex: 1,
+},
+mapInstructions: {
+  position: 'absolute',
+  top: 10,
+  left: 10,
+  right: 10,
+  backgroundColor: 'rgba(255, 255, 255, 0.9)',
+  paddingHorizontal: 12,
+  paddingVertical: 8,
+  borderRadius: 6,
+  flexDirection: 'row',
+  alignItems: 'center',
+  gap: 6,
+},
+mapInstructionsText: {
+  fontSize: 12,
+  color: '#666',
+  flex: 1,
+},
+mapButton: {
+  flexDirection: "row",
+  alignItems: "center",
+  backgroundColor: "#07bbfd",
+  padding: 10,
+  borderRadius: 8,
+  marginTop: 10,
+},
+mapButtonText: {
+  color: "#fff",
+  marginLeft: 10,
+  fontWeight: "bold",
+},
+
+
+});
